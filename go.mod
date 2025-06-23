@@ -2,7 +2,10 @@ module yunhudrive
 
 go 1.24.3
 
-require fyne.io/fyne/v2 v2.6.1
+require (
+	fyne.io/fyne/v2 v2.6.1
+	github.com/adrg/xdg v0.5.3
+)
 
 require (
 	fyne.io/systray v1.11.0 // indirect

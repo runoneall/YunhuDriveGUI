@@ -86,7 +86,7 @@ func WindowMain(myApp fyne.App) {
 
 			// 下载按钮
 			widget.NewButtonWithIcon("下载", theme.DownloadIcon(), func() {
-				fmt.Println("下载文件：" + uploadResult.Name)
+				WindowDownload(myApp, uploadResult)
 			}),
 
 			// 删除按钮
