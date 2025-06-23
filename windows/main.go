@@ -1,7 +1,6 @@
 package windows
 
 import (
-	"fmt"
 	"image/color"
 	"strings"
 	"yunhudrive/helper"
@@ -105,7 +104,7 @@ func WindowMain(myApp fyne.App) {
 
 			// 分享按钮
 			widget.NewButtonWithIcon("分享", theme.UploadIcon(), func() {
-				fmt.Println("分享文件：" + uploadResult.Name)
+				WindowShare(myApp, uploadResult)
 			}),
 		)
 	}
