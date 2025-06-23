@@ -19,9 +19,9 @@ func SaveJson(data interface{}, filename string) error {
 	return nil
 }
 
-func LoadUploadResult(filename string) (structs.UploadResult, error) {
+func LoadUploadResultFromPath(path string) (structs.UploadResult, error) {
 	var result structs.UploadResult
-	jsonData, err := os.ReadFile(filepath.Join("uploads", filename))
+	jsonData, err := os.ReadFile(path)
 	if err != nil {
 		return result, err
 	}
@@ -30,4 +30,8 @@ func LoadUploadResult(filename string) (structs.UploadResult, error) {
 		return result, err
 	}
 	return result, nil
+}
+
+func LoadUploadResult(filename string) (structs.UploadResult, error) {
+	return LoadUploadResultFromPath(filepath.Join("uploads", filename))
 }

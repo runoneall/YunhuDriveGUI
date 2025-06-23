@@ -30,6 +30,13 @@ func WindowMain(myApp fyne.App) {
 		})
 	})
 
+	// 导入按钮
+	importButton := widget.NewButtonWithIcon("导入", theme.DownloadIcon(), func() {
+		WindowImport(myApp, func() {
+			REFRESH_FLAG = true
+		})
+	})
+
 	// 刷新按钮
 	refreshButton := widget.NewButtonWithIcon("刷新", theme.ViewRefreshIcon(), func() {
 		REFRESH_FLAG = true
@@ -59,6 +66,7 @@ func WindowMain(myApp fyne.App) {
 			nil, nil,
 			container.NewHBox(
 				uploadButton,
+				importButton,
 				refreshButton,
 				loginButton,
 				logoutButton,
